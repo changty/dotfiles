@@ -1,5 +1,4 @@
-
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
+" All system-wide defaultn 'mattn/emmet-vim's are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
 " will be overwritten everytime an upgrade of the vim packages is performed.
@@ -21,13 +20,18 @@ if has("syntax")
   syntax on
 endif
 
-if $COLORTERM == 'gnome-terminal'
-	 set t_Co=256
-endif
 
 set number
-set showmatch
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 "set background=dark
@@ -54,7 +58,6 @@ set showmatch
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 "set mouse=a		" Enable mouse usage (all modes)
-
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
@@ -63,11 +66,6 @@ endif
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-syntax enable
-set background=dark
-let g:solarized_termcolors=16
-colorscheme solarized
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -75,26 +73,24 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'pangloss/vim-javascript'
+Plugin 'flazz/vim-colorschemes'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"
-" HTML+CSS plugin Emmet
-Plugin 'mattn/emmet-vim'
-
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
@@ -112,9 +108,3 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
