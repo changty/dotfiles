@@ -116,7 +116,7 @@ end
 
 -- {{{ Freedesktop Menu
 mymainmenu = awful.menu.new({ items = require("menugen").build_menu(),
-                              theme = { height = 16, width = 130 }})
+                              theme = { height = 26, width = 130 }})
 -- }}}
 
 -- {{{ Wibox
@@ -139,12 +139,12 @@ mytextclock = lain.widgets.abase({
 })
 
 -- Calendar
-lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
+lain.widgets.calendar:attach(mytextclock, { font_size = 16 })
 
 -- Weather
 weathericon = wibox.widget.imagebox(beautiful.widget_weather)
 myweather = lain.widgets.weather({
-    city_id = 123456, -- placeholder
+    city_id = 633679, -- placeholder
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
@@ -352,7 +352,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the upper wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 20 })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 30 })
     --border_width = 0, height =  20 })
 
     -- Widgets that are aligned to the upper left
@@ -745,7 +745,7 @@ client.connect_signal("manage", function (c, startup)
         layout:set_right(right_layout)
         layout:set_middle(middle_layout)
 
-        awful.titlebar(c,{size=16}):set_widget(layout)
+        awful.titlebar(c,{size=26}):set_widget(layout)
     end
 end)
 
