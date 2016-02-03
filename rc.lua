@@ -59,6 +59,7 @@ run_once("synclient MaxTapTime=0")
 
 -- beautiful init
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/multicolor/theme.lua")
+theme.useless_gap_width = 10
 
 -- common
 modkey     = "Mod4"
@@ -76,22 +77,28 @@ mail       = terminal .. " -e mutt "
 
 local layouts = {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+    lain.layout.uselesstile,
+    lain.layout.uselessfair,
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
 }
+
+
 -- }}}
 
 -- {{{ Tags
 tags = {
    names = { "web", "term", "docs", "media", "files", "other" },
-   layout = { layouts[1], layouts[3], layouts[4], layouts[1], layouts[7], layouts[1] }
+   -- used to be floating 1, left 3, bottom 4, floating 1, horizontal 7 and floating 1
+   -- layout = { layouts[1], layouts[3], layouts[4], layouts[1], layouts[7], layouts[1] }
+   layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[1] }
 }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
