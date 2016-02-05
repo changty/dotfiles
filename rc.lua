@@ -52,7 +52,11 @@ end
 --run_once("urxvtd")
 run_once("unclutter -root")
 run_once("dropbox start")
+run_once("xfce4-power-manager")
 run_once("synclient MaxTapTime=0")
+awful.util.spawn_with_shell("/usr/share/policykit-1-gnome/polkit-gnome-authentication-agent-1")
+awful.util.spawn_with_shell("xss-lock -- /usr/bin/slock &")
+run_once("nm-applet")
 -- }}}
 
 -- {{{ Variable definitions
