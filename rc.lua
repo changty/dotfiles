@@ -67,7 +67,7 @@ theme.useless_gap_width = 10
 
 -- common
 modkey     = "Mod4"
-altkey     = "Mod4"
+altkey     = "Mod1"
 terminal   = "gnome-terminal" or "xterm"
 editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
