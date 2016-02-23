@@ -32,6 +32,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
+
+
+
+" check file change every 4 seconds ('CursorHold') and reload the buffer upon detecting change
+set autoread                                                                                                                                                                                    
+au CursorHold * checktime   
+
+
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 "set background=dark
