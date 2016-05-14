@@ -185,3 +185,5 @@ client.urgent #ffffff #900000 #ffffff #900000
 
 gaps inner 10
 gaps outer 10
+
+exec_always feh --bg-scale ~/.i3/bg.jpg
