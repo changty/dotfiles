@@ -177,13 +177,14 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 4  
 new_window 1pixel
 
-
-client.focused #cb8896 #cb8896 #ff557f #ff557f
-client.focused_inactive #333333 #555555 #bbbbbb #ff557f
-client.unfocused #666666 #666666 #888888 #ff557f
-client.urgent #ffffff #900000 #ffffff #900000
+# class                 border  backgr. text    indicator child_border
+client.focused          #cb8896 #cb8896 #333333 #cb8896
+client.focused_inactive #333333 #555555 #bbbbbb #cb8896
+client.unfocused        #666666 #666666 #eeeeee #cb8896
+client.urgent           #ffffff #900000 #ffffff #cb8896
 
 gaps inner 10
 gaps outer 10
 
 exec_always feh --bg-scale ~/.i3/bg.jpg
+exec --no-startup-id redshift-gtk
