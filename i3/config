@@ -187,4 +187,5 @@ gaps inner 10
 gaps outer 10
 
 exec_always feh --bg-scale ~/.i3/bg.jpg
+exec --no-startup-id compton -b
 exec --no-startup-id redshift-gtk
