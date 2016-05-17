@@ -9,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc zshrc i3"		  # list of files/folders to symlink in homedir
+files="vimrc zshrc i3 irssi"		  # list of files/folders to symlink in homedir
 
 ##########
 
