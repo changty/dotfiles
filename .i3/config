@@ -183,8 +183,8 @@ client.focused_inactive #333333 #555555 #bbbbbb #ff557f
 client.unfocused #666666 #666666 #888888 #ff557f
 client.urgent #ffffff #900000 #ffffff #900000
 
-gaps inner 10
-gaps outer 10
+gaps inner 2 
+gaps outer 2 
 
 # Set background image
 exec_always --no-startup-id feh --bg-scale ~/.i3/bg.jpg

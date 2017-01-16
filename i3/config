@@ -51,6 +51,10 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 
+#move current workspace to right
+#bindsym $mod+ctrl+l move workspace to output left
+#bindsym $mod+ctrl+r move workspace to output right
+
 
 # change focus
 bindsym $mod+h focus left
@@ -126,6 +130,10 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# move workspace to to next monitor
+bindsym $mod+Shift+n move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -183,8 +191,8 @@ client.focused_inactive #333333 #555555 #bbbbbb #555555
 client.unfocused        #666666 #666666 #eeeeee #666666
 client.urgent           #ffffff #900000 #ffffff #900000
 
-gaps inner 10
-gaps outer 10
+gaps inner 2 
+gaps outer 2 
 
 exec_always feh --bg-scale ~/.i3/bg.jpg
 exec --no-startup-id compton -b
